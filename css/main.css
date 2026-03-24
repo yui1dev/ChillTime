@@ -120,29 +120,60 @@ body{
 
 
 /* section2 */
+
 .kutilayotganlar {
-    padding-top: 77px;
+    padding: 120px 20px;
     background-color: #f4eee2;
+    margin-bottom: 200px;
+   
 }
-.kutilayotganlar-container {
+.kutilayotganlar-container,
+.container{
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
 }
+
 .kutilayotganlar-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 60px;
+}
+.kutilayotganlar-header-logo{
+    width: 100px;
+    height: 55px;
 }
 .kutilayotganlar-header-title {
-     font-family: "Beadly" , sans-serif;
+        font-family: "Beadly" , sans-serif;
      font-weight: 300;
      color: #474740;
      font-size: 25px;
 }
-.kutilayotganlar-header-logo {
-    width: 100px;
-    height: 50px;
+
+/* SWIPER */
+.swiper {
+    width: 100%;
+    text-align: center;
+}
+
+/* SLIDE */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+
+/* BUTTONS (yashirinroq qilish) */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #aaa;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #000;
 }
 .bottom-div {
     text-align: center;
@@ -154,23 +185,21 @@ body{
     width: 500px;
     height: 500px;
 }
-.bottom-div-texts {
-}
 .bottom-div-texts-title {
     margin-bottom: 15px;
-    color: #000000;
+    color: #474740;
     font-family: "DM Sans";
     font-weight: 300;
 }
 .bottom-div-texts-text {
-    color: #000000;
+    color: #474740;
     font-family: "DM Sans" , sans-serif;
     font-weight: 400;
     font-size: 18px;
     margin-bottom: 10px;
 }
 .bottom-div-texts-gr {
-    color: #000000;
+    color: #474740;
     font-family: "DM Sans";
     font-weight: 300;
 }
@@ -178,4 +207,87 @@ body{
 .bottom-div-img2{
     width: 540px;
     height: 640px;
+} 
+
+
+/* menu start */
+.muz {
+    padding-top: 77px;
 }
+.muz-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.muz-box {
+    text-align: center;
+    border: 1px solid #474740;
+    width: 340px;
+    margin-bottom: 212px;
+    align-items: center;
+}
+.muz-box-img1 {
+    width: 230px;
+}
+
+.muz-box-img2{
+    width: 150px;
+}
+
+.muz-box-img3{
+    width: 245px;
+}
+
+.muz-box-texts-titlee {
+    color: black;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+.muz-box-texts-textt {
+    color: black;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+.muz-box-texts-grr {
+    color: rgb(72, 72, 72);
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.muz-box-btn {
+    padding: 20px 90px;
+    margin-bottom: 32px;
+    background-color: #474740;
+    color: #f4eee2;
+    border: none;
+    font-size: 20px;
+}
+/* menu end */
+
+
+
+
+/* markazlar start*/
+.markazlar {
+    padding: 0px 20px;
+}
+.markaz-cards{
+    
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+    /* justify-content: space-between; */
+}
+.markaz-card {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.markaz-text {
+    margin-top: 20px;
+      margin-bottom: 15px;
+    color: #474740;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    
+}
+/* markaz- end */
