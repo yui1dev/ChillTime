@@ -214,45 +214,67 @@ body{
 .muz {
     padding-top: 77px;
 }
-.muz-container {
+.muz-box-container {
+    
+    max-width: 1200px;
+    margin-left: 200px;
+    margin-right: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .muz-box {
     text-align: center;
     border: 1px solid #474740;
-    width: 340px;
+    width: 300px;
     margin-bottom: 212px;
     align-items: center;
 }
-.muz-box-img1 {
-    width: 230px;
-}
 
-.muz-box-img2{
+
+
+.muz-box-img-fanta {
     width: 150px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+.muz-box-img-pepsi{
+    width: 200px;
+    padding-top: 5px;
+}
+.kokteyl{
+   width: 190px;
+}
+.muz-box-img2{
+    height: 180px;
+    width: 130px;
+    margin-bottom: 18px;
+    margin-top: -10px;
 }
 
-.muz-box-img3{
-    width: 245px;
+.muz-box-img-sprite{
+    width: 180px;
+    padding-top: 28px;
 }
+
 
 .muz-box-texts-titlee {
     color: black;
     font-family: sans-serif;
     font-weight: 100;
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 12px;
 }
 .muz-box-texts-textt {
     color: black;
     font-family: sans-serif;
     font-weight: 400;
+    margin-bottom: 12px;
 }
 .muz-box-texts-grr {
     color: rgb(72, 72, 72);
-    font-family: sans-serif;
-    font-size: 28px;
+    font-family: "DM Sans", sans-serif ;
+    font-size: 24px;
+    margin-bottom: 12px;
 }
 .muz-box-btn {
     padding: 20px 90px;
