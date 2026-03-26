@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 .bgimg1L{
     position: absolute;
     width: 250px;
@@ -222,6 +227,29 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+.muz-nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.muz-nav-center{
+display: flex;
+gap: 35px;
+list-style: none;
+}
+.muz-nav-title {
+    margin-left: 20px;
+    list-style: none;
+}
+.muz-nav-link {
+    text-decoration: none;
+    font-family: "Beadly", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    color: #474740;
+}
 .muz-box {
     text-align: center;
     border: 1px solid #474740;
@@ -292,6 +320,7 @@ body{
 /* markazlar start*/
 .markazlar {
     padding: 0px 20px;
+    margin-bottom: 100px;
 }
 .markaz-cards{
     
@@ -313,3 +342,54 @@ body{
     
 }
 /* markaz- end */
+
+
+/* footer start */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+.container {
+}
+.footer-left {
+}
+.footer-title {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #474740;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 10px;
+}
+.footer-title-iconspan{
+    position: absolute;
+      top: -10px;
+    left: 72px;
+}
+.footer-title-icon {
+    width: 50px;
+  
+    
+}
+.footer-text {
+    color: #474740;
+    font-size: 18px;
+    
+
+}
+.texts{
+    text-align: center;
+}
+.footer-icons {
+    margin-top: 10px;
+}
+.insta, 
+.telegram{
+    font-size: 30px;
+}
+
+.footer-rght {
+    margin-top: 28px;
+}
+.footer-texts {
+}
