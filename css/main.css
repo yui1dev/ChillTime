@@ -413,7 +413,7 @@ body {
     justify-content: space-between;
 }
 
-.footer-title {
+/* .footer-title {
     font-size: 20px;
     font-family: sans-serif;
     color: #474740;
@@ -432,13 +432,28 @@ body {
     width: 50px;
 
 
+} */
+
+.footer-title {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #474740;
+    font-weight: 300;
+    display: flex;       /* Flex bilan matn va icon yonma-yon bo'ladi */
+    align-items: center; /* Vertikal markazlash */
+    margin-bottom: 10px;
+}
+
+.footer-title-icon {
+    width: 50px;
+    height: auto;    
+    margin-left: -10px;
+   
 }
 
 .footer-text {
     color: #474740;
     font-size: 18px;
-
-
 }
 
 .texts {
@@ -491,9 +506,16 @@ body {
 
 
 
-/* swiper start */
-@media (max-width: 760px) {
 
+
+/*  kutilayotganlar swiper start */
+@media (max-width: 760px) {
+    .kutilayotganlar{
+        padding: 0px 20px;
+    }
+    .kutilayotganlar-header-logo{
+        margin-top: -15px;
+    }
 
     .swiper-button-prev {
         display: none;
@@ -596,3 +618,65 @@ body {
 }
 
 /* swiper end */
+
+
+
+/* locations start */
+@media (max-width:1330px) {
+    .markaz-cards{
+        gap: 30px;
+    }
+}
+@media (max-width:1064px) {
+    .markaz-cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .markaz-card{
+     
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+@media (max-width: 555px) {
+    .markaz-map{
+        width: 320px;
+        height: 300px;
+    }
+     .markaz-card{
+     
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 400px) {
+    .markaz-map{
+        width: 300px;
+        height: 280px;
+    }
+     .markaz-card{
+     
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/* locations end */
+
+
+
+/* footer start */
+@media (max-width: 794px) {
+    .footer-container{
+        display:flex ;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-title{
+        justify-content: center;
+    }
+}
