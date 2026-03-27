@@ -1,35 +1,38 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-.bgimg1L{
+.bgimg1L {
     position: absolute;
     width: 250px;
     left: 80px;
     top: 40px;
     transform: rotate(-15deg);
 }
-.ikki{
+
+.ikki {
     position: absolute;
     width: 300px;
     top: 30px;
     right: 0px;
     transform: rotate(17deg);
 }
-.uch{
+
+.uch {
     width: 350px;
     top: 350px;
     left: 50px;
     transform: rotate(-20deg);
 
 }
-.tort{
+
+.tort {
     top: 400px;
     width: 300px;
     position: absolute;
@@ -38,9 +41,10 @@ html{
 
 }
 
-body{
+body {
     background-color: #f4eee2;
 }
+
 .header {
     /* background-image: url(../img/chill\ timebg.png); */
     /* background-repeat: no-repeat; */
@@ -51,22 +55,26 @@ body{
     overflow: hidden;
 
 }
+
 .header-container {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
+
 .header-logo {
     width: 100px;
     height: 55px;
     margin-bottom: 19px;
 }
+
 .header-title {
-    font-family: 'Beadly', sans-serif;                                        
+    font-family: 'Beadly', sans-serif;
     color: #474740;
     font-size: 45px;
     margin-bottom: 40px;
 }
+
 .header-text {
     font-family: "DM Sans", sans-serif;
     font-weight: 500;
@@ -75,51 +83,70 @@ body{
     margin-bottom: 65px;
 }
 
-.search{
+.search {
     margin-bottom: 80px;
 }
+
 .search-icon {
     width: 25px;
     height: 20px;
-    
+    margin-left: 50px;
+
 }
-.search-btn{
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.search-btn {
     position: absolute;
-    z-index: 10000;
-    margin-left: 310px;
-    margin-top: 9px;
-    
-    
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+
+
 }
+
 .search-input {
     background-color: #474740;
-    width: 800px;
-    padding: 10px;
-    position: relative;
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    /* icon uchun joy */
     border: none;
     border-radius: 50px;
     color: #f4eee2;
-    padding-left: 35px;
+    outline: none;
 }
+
 .navbar-list {
     list-style: none;
     margin-bottom: 200px;
 
 }
+
 .nav-item {
-      border: 1px solid #474740;
-   padding: 7px 10px;
+    border: 1px solid #474740;
+    padding: 7px 10px;
     margin-bottom: 20px;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 
 }
+
 .nav-link {
     text-decoration: none;
     font-family: "DM Sans";
     color: #474740;
-  
+
 }
 
 
@@ -130,10 +157,11 @@ body{
     padding: 120px 20px;
     background-color: #f4eee2;
     margin-bottom: 200px;
-   
+
 }
+
 .kutilayotganlar-container,
-.container{
+.container {
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
@@ -144,15 +172,17 @@ body{
     justify-content: space-between;
     margin-bottom: 60px;
 }
-.kutilayotganlar-header-logo{
+
+.kutilayotganlar-header-logo {
     width: 100px;
     height: 55px;
 }
+
 .kutilayotganlar-header-title {
-        font-family: "Beadly" , sans-serif;
-     font-weight: 300;
-     color: #474740;
-     font-size: 25px;
+    font-family: "Beadly", sans-serif;
+    font-weight: 300;
+    color: #474740;
+    font-size: 25px;
 }
 
 /* SWIPER */
@@ -171,7 +201,7 @@ body{
 /* CARD */
 
 /* BUTTONS (yashirinroq qilish) */
-.swiper-button-next,
+
 .swiper-button-prev {
     color: #aaa;
 }
@@ -180,47 +210,66 @@ body{
 .swiper-button-prev:hover {
     color: #000;
 }
+
 .bottom-div {
     text-align: center;
 }
+
 .bottom-div-img {
     text-align: center;
 }
+
 .bottom-div-img1 {
     width: 500px;
     height: 500px;
 }
+
 .bottom-div-texts-title {
     margin-bottom: 15px;
     color: #474740;
     font-family: "DM Sans";
     font-weight: 300;
 }
+
 .bottom-div-texts-text {
     color: #474740;
-    font-family: "DM Sans" , sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: 18px;
     margin-bottom: 10px;
 }
+
 .bottom-div-texts-gr {
     color: #474740;
     font-family: "DM Sans";
     font-weight: 300;
 }
 
-.bottom-div-img2{
+.bottom-div-img2 {
     width: 540px;
     height: 640px;
-} 
+}
+
+/* default: pagination yo‘q */
+.swiper-pagination {
+    display: none;
+}
+
+
+
+
+
+
+
 
 
 /* menu start */
 .muz {
     padding-top: 77px;
 }
+
 .muz-box-container {
-    
+
     max-width: 1200px;
     margin-left: 200px;
     margin-right: auto;
@@ -234,15 +283,18 @@ body{
     align-items: center;
     margin-bottom: 80px;
 }
-.muz-nav-center{
-display: flex;
-gap: 35px;
-list-style: none;
+
+.muz-nav-center {
+    display: flex;
+    gap: 35px;
+    list-style: none;
 }
+
 .muz-nav-title {
     margin-left: 20px;
     list-style: none;
 }
+
 .muz-nav-link {
     text-decoration: none;
     font-family: "Beadly", sans-serif;
@@ -250,6 +302,7 @@ list-style: none;
     font-size: 20px;
     color: #474740;
 }
+
 .muz-box {
     text-align: center;
     border: 1px solid #474740;
@@ -265,21 +318,24 @@ list-style: none;
     padding-top: 25px;
     padding-bottom: 15px;
 }
-.muz-box-img-pepsi{
+
+.muz-box-img-pepsi {
     width: 200px;
     padding-top: 5px;
 }
-.kokteyl{
-   width: 190px;
+
+.kokteyl {
+    width: 190px;
 }
-.muz-box-img2{
+
+.muz-box-img2 {
     height: 180px;
     width: 130px;
     margin-bottom: 18px;
     margin-top: -10px;
 }
 
-.muz-box-img-sprite{
+.muz-box-img-sprite {
     width: 180px;
     padding-top: 28px;
 }
@@ -292,18 +348,21 @@ list-style: none;
     font-size: 15px;
     margin-bottom: 12px;
 }
+
 .muz-box-texts-textt {
     color: black;
     font-family: sans-serif;
     font-weight: 400;
     margin-bottom: 12px;
 }
+
 .muz-box-texts-grr {
     color: rgb(72, 72, 72);
-    font-family: "DM Sans", sans-serif ;
+    font-family: "DM Sans", sans-serif;
     font-size: 24px;
     margin-bottom: 12px;
 }
+
 .muz-box-btn {
     padding: 20px 90px;
     margin-bottom: 32px;
@@ -312,6 +371,7 @@ list-style: none;
     border: none;
     font-size: 20px;
 }
+
 /* menu end */
 
 
@@ -322,25 +382,28 @@ list-style: none;
     padding: 0px 20px;
     margin-bottom: 100px;
 }
-.markaz-cards{
-    
+
+.markaz-cards {
+
     display: flex;
     gap: 300px;
     justify-content: center;
-    /* justify-content: space-between; */
 }
+
 .markaz-card {
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
+
 .markaz-text {
     margin-top: 20px;
-      margin-bottom: 15px;
+    margin-bottom: 15px;
     color: #474740;
     font-family: "DM Sans", sans-serif;
     font-weight: 300;
-    
+
 }
+
 /* markaz- end */
 
 
@@ -349,10 +412,7 @@ list-style: none;
     display: flex;
     justify-content: space-between;
 }
-.container {
-}
-.footer-left {
-}
+
 .footer-title {
     font-size: 20px;
     font-family: sans-serif;
@@ -361,35 +421,178 @@ list-style: none;
     position: relative;
     margin-bottom: 10px;
 }
-.footer-title-iconspan{
+
+.footer-title-iconspan {
     position: absolute;
-      top: -10px;
+    top: -10px;
     left: 72px;
 }
+
 .footer-title-icon {
     width: 50px;
-  
-    
+
+
 }
+
 .footer-text {
     color: #474740;
     font-size: 18px;
-    
+
 
 }
-.texts{
+
+.texts {
     text-align: center;
 }
+
 .footer-icons {
     margin-top: 10px;
 }
-.insta, 
-.telegram{
+
+.insta,
+.telegram {
     font-size: 30px;
 }
 
 .footer-rght {
     margin-top: 28px;
 }
-.footer-texts {
+
+
+
+
+
+/* header bg start */
+@media (max-width: 1110px) {
+
+    .bgimg1L,
+    .ikki,
+    .uch,
+    .tort {
+        display: none;
+    }
+
 }
+/* header bg end */
+
+
+
+
+/* header buttonlar start */
+@media (max-width: 550px) {
+    .nav-item {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+/* header buttonlar end */
+
+
+
+/* swiper start */
+@media (max-width: 760px) {
+
+
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-pagination {
+        display: block;
+        margin-top: 15px;
+        position: relative;
+    }
+
+    .swiper-pagination-bullet {
+        background: #ccc;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #474740;
+    }
+}
+
+@media (max-width: 740px) {
+
+
+
+    
+    .bottom-div-img1 {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+    /* matchani textii */
+  .img2{
+    margin-top: -40px;
+  }
+  .img1{
+    margin-top: 70px;
+    padding-bottom: 30px;
+  }
+  
+
+    .bottom-div-texts-text {
+        font-size: 14px;
+    }
+
+    .bottom-div-texts-title {
+        font-size: 18px;
+    }
+
+    .bottom-div-texts-gr {
+        font-size: 14px;
+    }
+
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+
+
+    .swiper-button-next {
+        color: #f4eee2;
+        display: none;
+        right: 0;
+    }
+
+    .swiper-button-prev {
+        display: none;
+        left: 0;
+    }
+
+    #swiperr {
+        display: none;
+    }
+}
+
+/* text va nuqta rangi */
+@media screen and (max-width: 740px) {
+    .bottom-div-texts2 {
+       
+        position: relative; /* absolute o‘rniga relative qilib, joylashuvni moslashtiramiz */
+        top: auto;          /* top ni olib tashlaymiz */
+        left: auto;         /* left ni olib tashlaymiz */
+        margin: 20px auto;  /* yuqoridan biroz bo‘sh joy va markazlash */
+        text-align: center; /* matn markazda */
+        width: 90%;         /* matnni ekran bo‘yicha sig‘dirish */
+        z-index: 100000;     /* hali ham rasm ustida bo‘lishi uchun */
+        top: -70px;
+
+    }
+    /* default pagination rangini o'zgartirish */
+.swiper-pagination-bullet {
+    background-color: #474740 !important ;  
+}
+
+/* aktiv bo‘lgan bullet rangini o‘zgartirish */
+.swiper-pagination-bullet-active {
+    background-color: #474740 !important ;  
+}
+}
+
+/* swiper end */
