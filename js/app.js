@@ -28,3 +28,36 @@ var swiper = new Swiper(".mySwiper", {
     }
   }
 });
+
+
+
+
+
+
+// menu nav list
+
+let link1 = document.querySelector(".muz-link1");
+let link2 = document.querySelector(".muz-link2");
+
+let container1 = document.querySelector(".muz-ichimlik");
+let container = document.querySelector(".muz-muzqaymoq");
+
+link2.addEventListener("click", (e) => {
+  e.preventDefault(); // 🔥 MUHIM
+
+  container1.style.display = "none";
+  container.style.display = "grid";
+
+  link2.classList.add("act");
+  link1.classList.remove("act");
+});
+
+link1.addEventListener("click", (e) => {
+  e.preventDefault(); // 🔥 MUHIM
+
+  container.style.display = "none";
+  container1.style.display = "grid";
+
+  link1.classList.add("act");
+  link2.classList.remove("act");
+});

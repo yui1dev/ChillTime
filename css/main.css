@@ -3,7 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.act{
+    border-bottom: 3px solid #474740;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -307,7 +309,7 @@ body {
     text-align: center;
     border: 1px solid #474740;
     width: 300px;
-    margin-bottom: 212px;
+    margin-bottom: 100px;
     align-items: center;
 }
 
@@ -370,6 +372,12 @@ body {
     color: #f4eee2;
     border: none;
     font-size: 20px;
+}
+
+
+
+.muz-muzqaymoq{
+    display: none;
 }
 
 /* menu end */
