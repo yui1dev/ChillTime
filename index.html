@@ -9,7 +9,7 @@
 
     <link href="https://fonts.cdnfonts.com/css/beadly" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
@@ -121,13 +121,12 @@
 
 
 
-    <section class="muz" id="menu" >
+    <section class="muz" id="menu">
         <div class="muz-container container">
             <ul class="muz-nav-list">
                 <li class="muz-nav-title">
                     <h1 class="kutilayotganlar-header-title muz-nav-title-title">Menu</h1>
                 </li>
-
                 <div class="muz-nav-center">
                     <li class="muz-nav-item"><a href="#" class="muz-nav-link muz-link1 act">Ichimlik</a></li>
                     <li class="muz-nav-item"><a href="#" class="muz-nav-link muz-link2">Muzqaymoq</a></li>
@@ -209,6 +208,7 @@
                 </div>
             </div>
 
+
             <!-- muzqaymoq cards st -->
             <div class="muz-box-container muz-muzqaymoq" id="muzqaymoq">
                 <div class="muz-box">
@@ -224,7 +224,6 @@
 
                     <button class="muz-box-btn">Savatga</button>
                 </div>
-
                 <div class="muz-box">
                     <div class="muz-box-img">
                         <img class="muz-box-img-sprite" src="./img/menu/muzqaymoq/2.png" alt="eror"
@@ -289,6 +288,52 @@
             </div>
             <!-- muzqaymoq cards end -->
 
+
+
+            <div class="overlay" id="overlay"></div>
+
+            <!-- 1️⃣ BUYURTMA MODAL -->
+            <div class="modal" id="orderModal">
+                <button class="close" onclick="closeAll()">×</button>
+
+                <h3>Buyurtma berish</h3>
+
+                <img id="m-img" src="" alt="">
+
+                <h2 id="m-title"></h2>
+                <p id="m-desc">Mazali ichimlik</p>
+                <p id="m-size"></p>
+                <h3 id="m-price"></h3>
+
+                <div class="count">
+                    <button onclick="minus()">−</button>
+                    <span id="count">1</span>
+                    <button onclick="plus()">+</button>
+                </div>
+
+                <button class="btn" onclick="goForm()">🛒 Savatga</button>
+            </div>
+
+            <!-- 2️⃣ FORM MODAL -->
+            <div class="modal" id="formModal">
+                <button class="close" onclick="closeAll()">×</button>
+
+                <h3>Ro‘yxatdan o‘ting</h3>
+
+                <input type="text" placeholder="Ism Familiyangiz">
+                <input type="text" placeholder="Telefon raqamingiz">
+
+                <button class="btn" onclick="success()">Tasdiqlash</button>
+            </div>
+            <!-- 3️⃣ SUCCESS MODAL -->
+            <div class="modal small" id="successModal">
+                <button class="close" onclick="closeAll()">×</button>
+
+                <h3>Tabriklaymiz 🎉</h3>
+                <p>Buyurtmangiz qabul qilindi!</p>
+            </div>
+
+
         </div>
     </section>
 
@@ -335,8 +380,7 @@
     <footer>
         <div class="footer-container container">
             <div class="footer-left">
-                <h5 class="footer-title">Chill Time <span class="footer-title-iconspan"><img src="./img/logo chill.png"
-                            class="footer-title-icon" alt=""></span></h5>
+                <h5 class="footer-title">Chill Time</h5>
 
                 <p class="footer-text">
                     Dam olish va mazali ichimliklardan zavqlanish uchun eng qulay joy. Biz sizga sifatli ichimlik, <br>
@@ -377,6 +421,7 @@
         @import url('https://fonts.cdnfonts.com/css/milicent');
     </style>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" id="swiperr"></script>
     <script src="./js/app.js"></script>
 
