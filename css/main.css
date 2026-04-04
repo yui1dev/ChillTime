@@ -3,9 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-.act{
+
+.act {
     border-bottom: 3px solid #474740;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -268,11 +270,11 @@ body {
 }
 
 .muz-box-container {
-   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
-  justify-content: center;
-  gap: 90px;
-  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+    justify-content: center;
+    gap: 90px;
+
 }
 
 .muz-nav-list {
@@ -374,7 +376,7 @@ body {
 
 
 
-.muz-muzqaymoq{
+.muz-muzqaymoq {
     display: none;
 }
 
@@ -385,7 +387,7 @@ body {
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(5px);
     display: none;
     animation: fadeIn 0.3s ease;
@@ -505,6 +507,7 @@ input {
         transform: translate(-50%, -60%) scale(0.6);
         opacity: 0;
     }
+
     to {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
@@ -512,8 +515,13 @@ input {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -553,7 +561,10 @@ input {
 
 
 /* footer start */
+
 .footer-container {
+    padding-left: 45px;
+    padding-right: 45px;
     display: flex;
     justify-content: space-between;
 }
@@ -572,8 +583,8 @@ input {
     font-family: sans-serif;
     color: #474740;
     font-weight: 300;
-    display: flex;       /* Flex bilan matn va icon yonma-yon bo'ladi */
-    align-items: center; /* Vertikal markazlash */
+    display: flex;      
+    align-items: center; 
     margin-bottom: 10px;
 }
 
@@ -587,9 +598,10 @@ input {
 .footer-text {
     color: #474740;
     font-size: 18px;
-}
+} 
 
 .texts {
+    line-height: 25px;
     text-align: center;
 }
 
@@ -604,7 +616,7 @@ input {
 
 .footer-rght {
     margin-top: 28px;
-}
+} 
 
 
 
@@ -621,6 +633,7 @@ input {
     }
 
 }
+
 /* header bg end */
 
 
@@ -635,6 +648,7 @@ input {
     }
 
 }
+
 /* header buttonlar end */
 
 
@@ -643,10 +657,11 @@ input {
 
 /*  kutilayotganlar swiper start */
 @media (max-width: 760px) {
-    .kutilayotganlar{
+    .kutilayotganlar {
         padding: 0px 20px;
     }
-    .kutilayotganlar-header-logo{
+
+    .kutilayotganlar-header-logo {
         margin-top: -15px;
     }
 
@@ -674,21 +689,23 @@ input {
 
 
 
-    
+
     .bottom-div-img1 {
         width: 100%;
         height: auto;
         max-width: 300px;
     }
+
     /* matchani textii */
-  .img2{
-    margin-top: -40px;
-  }
-  .img1{
-    margin-top: 70px;
-    padding-bottom: 30px;
-  }
-  
+    .img2 {
+        margin-top: -40px;
+    }
+
+    .img1 {
+        margin-top: 70px;
+        padding-bottom: 30px;
+    }
+
 
     .bottom-div-texts-text {
         font-size: 14px;
@@ -728,26 +745,34 @@ input {
 /* text va nuqta rangi */
 @media screen and (max-width: 740px) {
     .bottom-div-texts2 {
-       
-        position: relative; /* absolute o‘rniga relative qilib, joylashuvni moslashtiramiz */
-        top: auto;          /* top ni olib tashlaymiz */
-        left: auto;         /* left ni olib tashlaymiz */
-        margin: 20px auto;  /* yuqoridan biroz bo‘sh joy va markazlash */
-        text-align: center; /* matn markazda */
-        width: 90%;         /* matnni ekran bo‘yicha sig‘dirish */
-        z-index: 100000;     /* hali ham rasm ustida bo‘lishi uchun */
+
+        position: relative;
+        /* absolute o‘rniga relative qilib, joylashuvni moslashtiramiz */
+        top: auto;
+        /* top ni olib tashlaymiz */
+        left: auto;
+        /* left ni olib tashlaymiz */
+        margin: 20px auto;
+        /* yuqoridan biroz bo‘sh joy va markazlash */
+        text-align: center;
+        /* matn markazda */
+        width: 90%;
+        /* matnni ekran bo‘yicha sig‘dirish */
+        z-index: 100000;
+        /* hali ham rasm ustida bo‘lishi uchun */
         top: -70px;
 
     }
-    /* default pagination rangini o'zgartirish */
-.swiper-pagination-bullet {
-    background-color: #474740 !important ;  
-}
 
-/* aktiv bo‘lgan bullet rangini o‘zgartirish */
-.swiper-pagination-bullet-active {
-    background-color: #474740 !important ;  
-}
+    /* default pagination rangini o'zgartirish */
+    .swiper-pagination-bullet {
+        background-color: #474740 !important;
+    }
+
+    /* aktiv bo‘lgan bullet rangini o‘zgartirish */
+    .swiper-pagination-bullet-active {
+        background-color: #474740 !important;
+    }
 }
 
 /* swiper end */
@@ -756,63 +781,73 @@ input {
 
 /* locations start */
 @media (max-width:1330px) {
-    .markaz-cards{
+    .markaz-cards {
         gap: 30px;
     }
 }
+
 @media (max-width:1064px) {
-    .markaz-cards{
+    .markaz-cards {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .markaz-card{
-     
+
+    .markaz-card {
+
         max-width: 560px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
 }
+
 @media (max-width: 555px) {
-    .markaz-map{
+    .markaz-map {
         width: 320px;
         height: 300px;
     }
-     .markaz-card{
-     
+
+    .markaz-card {
+
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
     }
 }
+
 @media (max-width: 400px) {
-    .markaz-map{
+    .markaz-map {
         width: 300px;
         height: 280px;
     }
-     .markaz-card{
-     
+
+    .markaz-card {
+
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
     }
 }
+
 /* locations end */
 
 
 
 /* footer start */
 @media (max-width: 794px) {
-    .footer-container{
-        display:flex ;
+    .footer-container {
+        display: flex;
         flex-direction: column;
         text-align: center;
+        gap: 50px;
     }
-    .footer-title{
+
+    .footer-title {
         justify-content: center;
     }
 }
+
 /* footer end */
 
 /* menu start */
@@ -820,30 +855,33 @@ input {
     .muz-nav-list {
         flex-direction: column;
         display: flex;
-    list-style: none;
-    margin-bottom: 80px;
-    align-items: start;
-    
-}
-.muz-nav-title-title{
-    margin-bottom: 40px;
-}
+        list-style: none;
+        margin-bottom: 80px;
+        align-items: start;
 
-.muz-nav-center {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    margin-bottom: 30px;
-    margin-left: 40px;
-}
-.muz-nav-logo{
-    position: absolute;
-    left: 72px;
-    
-  }
- .muz-box-container{
-    max-width: 298px;
-    margin-left: auto;
-    margin-right: auto;
- }
+    }
+
+    .muz-nav-title-title {
+        margin-bottom: 40px;
+    }
+
+    .muz-nav-center {
+        display: flex;
+        gap: 35px;
+        list-style: none;
+        margin-bottom: 30px;
+        margin-left: 40px;
+    }
+
+    .muz-nav-logo {
+        position: absolute;
+        left: 72px;
+
+    }
+
+    .muz-box-container {
+        max-width: 298px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
