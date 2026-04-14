@@ -38,18 +38,19 @@
                 </button>
             </div>
 
-
-            <!-- <div class="search">
-                <div class="search-btn">
-                    <i class="fa-solid fa-magnifying-glass search-icon" style="color: rgb(244, 238, 226);"></i>
-                </div>
-                <input type="text" class="search-input">
-            </div> -->
-
             <ul class="navbar-list">
                 <li class="nav-item"><a href="#soon" class="nav-link">Kutilayotgan yangi mahsulotlar</a></li>
                 <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
                 <li class="nav-item"><a href="#locations" class="nav-link">Markazlarimiz</a></li>
+
+
+                <button class="nav-btn-icon-div" style="position: relative;">
+                    <i class="fa-solid fa-cart-shopping nav-btn-icon" style="color : rgb(244, 238, 226);"></i>
+                    <span id="cart-count">0</span> </button>
+                <button id="savat-tugmasi" onclick="savatgaOtish()">
+                    Savatni ko'rish
+                </button>
+
             </ul>
 
         </div>
@@ -147,7 +148,7 @@
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
 
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Fanta', 15000)">Savatga</button>
                 </div>
 
                 <div class="muz-box">
@@ -160,7 +161,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Sprite', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -171,7 +172,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn"onclick="tayyorlash('Pepsi', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -182,7 +183,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Limonchoy', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -193,7 +194,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Kokteyl', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -204,7 +205,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn"onclick="tayyorlash('Oq mocha', 15000)">Savatga</button>
                 </div>
             </div>
 
@@ -222,7 +223,7 @@
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
 
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Pinku', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -235,7 +236,7 @@
                         <p class="muz-box-texts-textt">300MG</p>
                         <h1 class="muz-box-texts-grr">20.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Choco', 20000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -247,7 +248,7 @@
                         <p class="muz-box-texts-textt">300mg</p>
                         <h1 class="muz-box-texts-grr">20.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Karamel', 20000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -259,7 +260,7 @@
                         <p class="muz-box-texts-textt">300mg</p>
                         <h1 class="muz-box-texts-grr">17.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Oreo', 17000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -269,9 +270,9 @@
                     <div class="muz-box-texts">
                         <h1 class="muz-box-texts-titlee"> B Q </h1>
                         <p class="muz-box-texts-textt">400mg</p>
-                        <h1 class="muz-box-texts-grr">15.000 so’m</h1>
+                        <h1 class="muz-box-texts-grr" >15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('BQ (banan & qulpnay)', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -283,7 +284,7 @@
                         <p class="muz-box-texts-textt">300mg</p>
                         <h1 class="muz-box-texts-grr">20.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Mix', 20000)">Savatga</button>
                 </div>
             </div>
             <!-- muzqaymoq cards end -->
@@ -410,8 +411,7 @@
                     <a href="https://t.me/darcelIe" class="footer-text "
                         style=" padding-bottom: 2px; padding-right: 10px;">Dasturchi
                         1</a>
-                    <a href="https://t.me/Oybekov00" class="footer-text "
-                        style=" padding-bottom: 2px">Dasturchi 2</a>
+                    <a href="https://t.me/Oybekov00" class="footer-text " style=" padding-bottom: 2px">Dasturchi 2</a>
 
                 </p>
             </div>
@@ -465,8 +465,8 @@
         @import url('https://fonts.cdnfonts.com/css/milicent');
     </style>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" id="swiperr"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></scrip >
+            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" id="swiperr"></script>
     <script src="./js/app.js"></script>
 
 </body>

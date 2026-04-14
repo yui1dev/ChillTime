@@ -1,5 +1,4 @@
 
-
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1.5,
   spaceBetween: 30,
@@ -66,75 +65,118 @@ link1.addEventListener("click", (e) => {
 
 
 
-//  openmodel
 
-let count = 1;
-let basePrice = 0; // har bir mahsulotning bitta narxi
-let priceElement = document.getElementById("m-price");
+// 1. O'zgaruvchilarni e'lon qilish
+let mahsulotSoni = 1;
+let basePrice = 0; 
+let joriyMahsulotNomi = "";
+let savatdagiJami = parseInt(localStorage.getItem('savatSoni')) || 0;
 
-// OCHISH - CARDS
+const priceElement = document.getElementById("m-price");
+const countText = document.getElementById("count");
+const cartSpan = document.getElementById("cart-count");
+
+// 2. Sahifa yuklanganda savatdagi sonni chiqarish
+window.onload = function() {
+    if (cartSpan) {
+        cartSpan.innerText = savatdagiJami;
+    }
+};
+
+// 3. MODALNI OCHISH VA MA'LUMOTLARNI TO'LDIRISH
 document.querySelectorAll(".muz-box-btn").forEach((btn, i) => {
     btn.onclick = () => {
         let box = document.querySelectorAll(".muz-box")[i];
 
-        document.getElementById("m-img").src =
-            box.querySelector("img").src;
+        // Modal elementlarini to'ldirish
+        document.getElementById("m-img").src = box.querySelector("img").src;
+        joriyMahsulotNomi = box.querySelector(".muz-box-texts-titlee").innerText;
+        document.getElementById("m-title").innerText = joriyMahsulotNomi;
+        document.getElementById("m-size").innerText = box.querySelector(".muz-box-texts-textt").innerText;
 
-        document.getElementById("m-title").innerText =
-            box.querySelector(".muz-box-texts-titlee").innerText;
-
-        document.getElementById("m-size").innerText =
-            box.querySelector(".muz-box-texts-textt").innerText;
-
-        // Narxni olish (so‘mni raqam sifatida)
+        // Narxni raqamga aylantirib olish
         let priceText = box.querySelector(".muz-box-texts-grr").innerText;
-        basePrice = parseInt(priceText.replace(/\D/g,'')); // 15000 so’m -> 15000
+        basePrice = parseInt(priceText.replace(/\D/g,'')); 
+        
+        mahsulotSoni = 1; // Har gal ochilganda 1 ga qaytarish
+        if (countText) countText.innerText = mahsulotSoni;
         updatePrice();
-
-        count = 1;
-        document.getElementById("count").innerText = count;
 
         show("orderModal");
     };
 });
 
+// 4. Narxni yangilash funksiyasi
 function updatePrice() {
-    let total = basePrice * count;
-    priceElement.innerText = total.toLocaleString('uz-UZ') + " so’m";
+    if (priceElement) {
+        let total = basePrice * mahsulotSoni;
+        priceElement.innerText = total.toLocaleString('uz-UZ') + " so’m";
+    }
 }
 
-function show(id) {
-    document.getElementById("overlay").style.display = "block";
-    document.getElementById(id).style.display = "block";
-}
-
-function closeAll() {
-    document.getElementById("overlay").style.display = "none";
-    document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
-}
-
+// 5. SAVATGA QO'SHISH (Asosiy funksiya)
 function goForm() {
-    document.getElementById("orderModal").style.display = "none";
-    document.getElementById("formModal").style.display = "block";
+    // Savat sonini hisoblash va yangilash
+    savatdagiJami += mahsulotSoni;
+    if (cartSpan) {
+        cartSpan.innerText = savatdagiJami;
+    }
+    localStorage.setItem('savatSoni', savatdagiJami);
+
+    // Buyurtmalar ro'yxatini shakllantirish
+    let buyurtmalar = JSON.parse(localStorage.getItem('buyurtmalarim')) || [];
+    
+    buyurtmalar.push({
+        nomi: joriyMahsulotNomi,
+        narxi: basePrice,
+        soni: mahsulotSoni,
+        jamiNarxi: basePrice * mahsulotSoni,
+        vaqti: new Date().toLocaleTimeString()
+    });
+
+    localStorage.setItem('buyurtmalarim', JSON.stringify(buyurtmalar));
+
+    // Modallarni yopish va natijani ko'rsatish
+    closeAll();
+    show("successModal");
 }
 
-function success() {
-    document.getElementById("formModal").style.display = "none";
-    document.getElementById("successModal").style.display = "block";
-}
-
+// 6. Plus va Minus tugmalari
 function plus() {
-    count++;
-    document.getElementById("count").innerText = count;
+    mahsulotSoni++;
+    if (countText) countText.innerText = mahsulotSoni;
     updatePrice();
 }
 
 function minus() {
-    if (count > 1) {
-        count--;
-        document.getElementById("count").innerText = count;
+    if (mahsulotSoni > 1) {
+        mahsulotSoni--;
+        if (countText) countText.innerText = mahsulotSoni;
         updatePrice();
     }
 }
 
-document.getElementById("overlay").onclick = closeAll;
+// 7. Modalni ko'rsatish va yopish
+function show(id) {
+    let modal = document.getElementById(id);
+    let overlay = document.getElementById("overlay");
+    if (overlay) overlay.style.display = "block";
+    if (modal) modal.style.display = "block";
+}
+
+function closeAll() {
+    let overlay = document.getElementById("overlay");
+    if (overlay) overlay.style.display = "none";
+    document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
+}
+
+// 8. Savat sahifasiga o'tish
+function savatgaOtish() {
+    window.location.href = "buyurtmalarim/buyurtmalarim.html";
+}
+
+// Overlay bosilganda yopish
+if (document.getElementById("overlay")) {
+    document.getElementById("overlay").onclick = closeAll;
+}
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyurtmalarim</title>
+    <style>
+
+
+
+
+
+    body {
+        background-color: #f4eee2;
+        color: #474740;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 15px; /* Mobil qurilmalarda chetdan joy qolishi uchun */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 600px;
+        width: 100%; /* Kichik ekranlarda butun ekranni egallaydi */
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(71, 71, 64, 0.1);
+        box-sizing: border-box; /* Padding ichkarida qolishi uchun */
+    }
+
+    h1 {
+        text-align: center;
+        border-bottom: 2px solid #474740;
+        padding-bottom: 10px;
+        font-size: 1.8rem; /* Mobil ekran uchun mos o'lcham */
+    }
+
+    .order-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(71, 71, 64, 0.2);
+        gap: 10px; /* Matnlar bir-biriga yopishib qolmasligi uchun */
+    }
+
+    .order-info h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .order-info p {
+        margin: 5px 0 0;
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: 1.1rem;
+        white-space: nowrap; /* Narx ikki qator bo'lib ketmasligi uchun */
+    }
+
+    /* TUGMALAR UCHUN KONTEYNER */
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap; /* Tugmalar sig'masa pastga tushadi */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 25px;
+    }
+
+    .back-btn, .clear-btn {
+        flex: 1; /* Tugmalar teng o'lchamda bo'ladi */
+        min-width: 150px; /* Juda kichrayib ketmasligi uchun */
+        text-align: center;
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: transform 0.2s, opacity 0.2s;
+        border: none;
+    }
+
+    .back-btn {
+        background-color: #474740;
+        color: #f4eee2;
+    }
+
+    .clear-btn {
+        background-color: #8b0000;
+        color: #f4eee2;
+    }
+
+    .back-btn:hover, .clear-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+   /* Mobil telefonlar uchun (Media Query) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Chetki masofani kamaytiramiz */
+    }
+    
+    .container {
+        padding: 15px;
+        width: 100%; /* Kichik ekranda to'liq sig'ishi uchun */
+    }
+
+    .order-item {
+        flex-direction: column; /* Nomi va narxi ustma-ust tushadi */
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .price {
+        align-self: flex-end; /* Narxni o'ng tomonga suramiz */
+    }
+    
+    .back-btn, .clear-btn {
+        width: 100%; /* Tugmalar to'liq eniga bo'ladi */
+        margin: 5px 0;
+    }
+}
+</style>
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Buyurtmalarim</h1>
+
+    <div id="buyurtma-ruyxati-ichki"></div>
+
+    <div class="btn-group">
+        <a href="../index.html" class="back-btn">Asosiy sahifaga qaytish</a>
+        <button onclick="savatniTozalash()" class="clear-btn">Savatni tozalash</button>
+    </div>
+</div>
+    </div>
+</div>
+
+  <script src="../js/coat.js"></script>
+</body>
+
+</html>

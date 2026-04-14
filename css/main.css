@@ -149,8 +149,55 @@ body {
     color: #474740;
 
 }
+.nav-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-btn-icon-div{
+    border: none;
+      background-color: #474740;
+      padding: 8px 8px;
+      border-radius: 50px;
 
-
+}
+#nav-button{
+    padding: 8px 20px;
+    background-color: #474740;
+    border-radius: 50px;
+    color: #f4eee2;
+    border: none;
+    margin-right: 10px;
+}
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-family: sans-serif;
+    border: 2px solid #474740;
+}
+#cart-list div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.1);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+#savat-tugmasi{
+    background-color: #474740;
+    border: none;
+    padding: 8px 10px;
+    color: #f4eee2;
+    border-radius: 50px;
+    margin-left: 15px;
+}
 
 /* section2 */
 
