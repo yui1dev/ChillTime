@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chill Time</title>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/main.css">
+
 
     <link href="https://fonts.cdnfonts.com/css/beadly" rel="stylesheet">
 
@@ -42,7 +44,11 @@
                 <li class="nav-item"><a href="#soon" class="nav-link">Kutilayotgan yangi mahsulotlar</a></li>
                 <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
                 <li class="nav-item"><a href="#locations" class="nav-link">Markazlarimiz</a></li>
+                <li class="nav-item"><a href="#yordam" class="nav-link">Yordam</a></li>
 
+            </ul>
+
+            <div class="buyurtma-div">
 
                 <button class="nav-btn-icon-div" style="position: relative;">
                     <i class="fa-solid fa-cart-shopping nav-btn-icon" style="color : rgb(244, 238, 226);"></i>
@@ -50,8 +56,7 @@
                 <button id="savat-tugmasi" onclick="savatgaOtish()">
                     Savatni ko'rish
                 </button>
-
-            </ul>
+            </div>
 
         </div>
     </section>
@@ -172,7 +177,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn"onclick="tayyorlash('Pepsi', 15000)">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Pepsi', 15000)">Savatga</button>
                 </div>
                 <div class="muz-box">
                     <div class="muz-box-img">
@@ -205,7 +210,7 @@
                         <p class="muz-box-texts-textt">500ml</p>
                         <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
-                    <button class="muz-box-btn"onclick="tayyorlash('Oq mocha', 15000)">Savatga</button>
+                    <button class="muz-box-btn" onclick="tayyorlash('Oq mocha', 15000)">Savatga</button>
                 </div>
             </div>
 
@@ -270,7 +275,7 @@
                     <div class="muz-box-texts">
                         <h1 class="muz-box-texts-titlee"> B Q </h1>
                         <p class="muz-box-texts-textt">400mg</p>
-                        <h1 class="muz-box-texts-grr" >15.000 so’m</h1>
+                        <h1 class="muz-box-texts-grr">15.000 so’m</h1>
                     </div>
                     <button class="muz-box-btn" onclick="tayyorlash('BQ (banan & qulpnay)', 15000)">Savatga</button>
                 </div>
@@ -315,17 +320,6 @@
                 <button class="btn" onclick="goForm()">🛒 Savatga</button>
             </div>
 
-            <!-- 2️⃣ FORM MODAL -->
-            <div class="modal" id="formModal">
-                <button class="close" onclick="closeAll()">×</button>
-
-                <h3>Ro‘yxatdan o‘ting</h3>
-
-                <input type="text" placeholder="Ism Familiyangiz">
-                <input type="text" placeholder="Telefon raqamingiz">
-
-                <button class="btn" onclick="success()">Tasdiqlash</button>
-            </div>
             <!-- 3️⃣ SUCCESS MODAL -->
             <div class="modal small" id="successModal">
                 <button class="close" onclick="closeAll()">×</button>
@@ -377,6 +371,27 @@
 
     </section>
 
+    <section class="yordam" id="yordam">
+        <div class="yordam-bolimi">
+            <h2>Ko'p beriladigan savollar</h2>
+
+            <details class="savol-blok">
+                <summary>Buyurtmani qanday amalga oshirsa bo'ladi?</summary>
+                <p>Siz mahsulotlarni savatchaga qo'shib, Savat bo'limidan "Tasdiqlash" tugmasi orqali Telegram botimizga yuborishingiz
+                    mumkin.</p>
+            </details>
+
+            <details class="savol-blok">
+                <summary>To'lov usullari qanday?</summary>
+                <p>Hozirda faqat karta orqali o'tkazmalarni qabul qilamiz.</p>
+            </details>
+
+            <details class="savol-blok">
+                <summary>Yetkazib berish xizmati bormi?</summary>
+                <p>Afsuski yo'q TT.</p>
+            </details>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container container">
@@ -464,9 +479,10 @@
     <style>
         @import url('https://fonts.cdnfonts.com/css/milicent');
     </style>
+    <script src="./js/coat.js"></script>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></scrip >
-            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" id="swiperr"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" id="swiperr"></script>
     <script src="./js/app.js"></script>
 
 </body>

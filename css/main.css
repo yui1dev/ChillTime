@@ -12,6 +12,48 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+.buyurtma-div {
+    /* Ekranga yopishtirish */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    /* Ichidagilarni chiroyli joylashtirish */
+    display: flex;
+    align-items: center;
+    justify-content: end; /* Tugmalarni ikki chetga suradi */
+    padding: 10px 20px;
+
+    /* Shaffof va xiralashtirilgan fon */
+    background-color: #f4eee2 /* Qora shaffof fon */;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    
+    /* Pastki chegara */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+/* Muhim: Body tepasidan joy ochish kerak, 
+chunki fixed element joyni band qilmaydi va kontentni to'sib qo'yadi */
+body {
+    padding-top: 70px; 
+}
+
+/* Tugmalaringiz uchun qo'shimcha stil (ixtiyoriy) */
+#savat-tugmasi {
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
+
+
+
+
 .bgimg1L {
     position: absolute;
     width: 250px;
@@ -823,7 +865,56 @@ input {
 }
 
 /* swiper end */
+.yordam{
+    margin-bottom: 100px;
+}
 
+.yordam-bolimi {
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+.yordam-bolimi h2 {
+    margin-bottom: 15px;
+    
+}
+.savol-blok {
+    background: #f4f4f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #474740;
+    transition: all 0.3s ease;
+}
+
+.savol-blok summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; /* Standart uchburchakni olib tashlash uchun */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Savol yoniga belgi qo'shish */
+.savol-blok summary::after {
+    content: "▼";
+    font-size: 12px;
+    color: #555;
+}
+
+/* Blok ochilganda belgi o'zgarishi */
+.savol-blok[open] summary::after {
+    content: "▲";
+}
+
+.savol-blok p {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    color: #474747;
+    line-height: 1.5;
+}
 
 
 /* locations start */

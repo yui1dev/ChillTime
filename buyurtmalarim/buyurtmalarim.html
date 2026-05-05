@@ -6,150 +6,347 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyurtmalarim</title>
     <style>
+        /* TEXT */
+        .modal h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .modal p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .modal h3 {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        #successModal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(72, 72, 72);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            min-width: 250px;
+        }
+
+        /* MODAL */
+        .modal {
+            
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #5f5f5f;
+            color: #fff;
+            width: 360px;
+            padding: 25px;
+            border-radius: 22px;
+            text-align: center;
+            display: none;
+            font-family: sans-serif;
+            animation: zoomIn 0.3s ease forwards;
+        }
+
+        .modal.small {
+            width: 280px;
+        }
+
+        /* CLOSE */
+        .close {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            background: #777;
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close:hover {
+            background: #999;
+        }
 
 
+        body {
+            background-color: #f4eee2;
+            color: #474740;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 15px;
+            /* Mobil qurilmalarda chetdan joy qolishi uchun */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
+        .container {
+            max-width: 600px;
+            width: 100%;
+            /* Kichik ekranlarda butun ekranni egallaydi */
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(71, 71, 64, 0.1);
+            box-sizing: border-box;
+            /* Padding ichkarida qolishi uchun */
+        }
 
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #474740;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+            /* Mobil ekran uchun mos o'lcham */
+        }
 
-    body {
-        background-color: #f4eee2;
-        color: #474740;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 15px; /* Mobil qurilmalarda chetdan joy qolishi uchun */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-    }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(71, 71, 64, 0.2);
+            gap: 10px;
+            /* Matnlar bir-biriga yopishib qolmasligi uchun */
+        }
 
-    .container {
-        max-width: 600px;
-        width: 100%; /* Kichik ekranlarda butun ekranni egallaydi */
-        background: rgba(255, 255, 255, 0.5);
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(71, 71, 64, 0.1);
-        box-sizing: border-box; /* Padding ichkarida qolishi uchun */
-    }
+        .order-info h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
 
-    h1 {
-        text-align: center;
-        border-bottom: 2px solid #474740;
-        padding-bottom: 10px;
-        font-size: 1.8rem; /* Mobil ekran uchun mos o'lcham */
-    }
+        .order-info p {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
 
-    .order-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(71, 71, 64, 0.2);
-        gap: 10px; /* Matnlar bir-biriga yopishib qolmasligi uchun */
-    }
+        .price {
+            font-weight: bold;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            /* Narx ikki qator bo'lib ketmasligi uchun */
+        }
 
-    .order-info h3 {
-        margin: 0;
-        font-size: 1rem;
-    }
+        /* TUGMALAR UCHUN KONTEYNER */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            /* Tugmalar sig'masa pastga tushadi */
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
 
-    .order-info p {
-        margin: 5px 0 0;
-        font-size: 0.85rem;
-        opacity: 0.8;
-    }
+        .back-btn,
+        .clear-btn {
+            flex: 1;
+            /* Tugmalar teng o'lchamda bo'ladi */
+            min-width: 150px;
+            /* Juda kichrayib ketmasligi uchun */
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            border: none;
+        }
+        .back-btn {
+            background-color: #474740;
+            color: #f4eee2;
+        }
 
-    .price {
-        font-weight: bold;
-        font-size: 1.1rem;
-        white-space: nowrap; /* Narx ikki qator bo'lib ketmasligi uchun */
-    }
+        .clear-btn {
+            background-color: #8b0000;
+            color: #f4eee2;
+        }
 
-    /* TUGMALAR UCHUN KONTEYNER */
-    .btn-group {
-        display: flex;
-        flex-wrap: wrap; /* Tugmalar sig'masa pastga tushadi */
-        justify-content: center;
-        gap: 10px;
-        margin-top: 25px;
-    }
+        .back-btn:hover,
+        .clear-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
 
-    .back-btn, .clear-btn {
-        flex: 1; /* Tugmalar teng o'lchamda bo'ladi */
-        min-width: 150px; /* Juda kichrayib ketmasligi uchun */
-        text-align: center;
-        padding: 12px 20px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.95rem;
-        cursor: pointer;
-        transition: transform 0.2s, opacity 0.2s;
-        border: none;
-    }
+        /* Mobil telefonlar uchun (Media Query) */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                /* Chetki masofani kamaytiramiz */
+            }
 
-    .back-btn {
-        background-color: #474740;
-        color: #f4eee2;
-    }
+            .container {
+                padding: 15px;
+                width: 100%;
+                /* Kichik ekranda to'liq sig'ishi uchun */
+            }
 
-    .clear-btn {
-        background-color: #8b0000;
-        color: #f4eee2;
-    }
+            .order-item {
+                flex-direction: column;
+                /* Nomi va narxi ustma-ust tushadi */
+                align-items: flex-start;
+                gap: 5px;
+            }
 
-    .back-btn:hover, .clear-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-    }
+            .price {
+                align-self: flex-end;
+                /* Narxni o'ng tomonga suramiz */
+            }
 
-   /* Mobil telefonlar uchun (Media Query) */
-@media (max-width: 480px) {
-    body {
-        padding: 10px; /* Chetki masofani kamaytiramiz */
-    }
-    
-    .container {
-        padding: 15px;
-        width: 100%; /* Kichik ekranda to'liq sig'ishi uchun */
-    }
+            .back-btn,
+            .clear-btn {
+                width: 100%;
+                /* Tugmalar to'liq eniga bo'ladi */
+                margin: 5px 0;
+            }
 
-    .order-item {
-        flex-direction: column; /* Nomi va narxi ustma-ust tushadi */
-        align-items: flex-start;
-        gap: 5px;
-    }
+            /* buyurtmalarim.html uchun maxsus uslublar */
 
-    .price {
-        align-self: flex-end; /* Narxni o'ng tomonga suramiz */
-    }
-    
-    .back-btn, .clear-btn {
-        width: 100%; /* Tugmalar to'liq eniga bo'ladi */
-        margin: 5px 0;
-    }
-}
-</style>
+            .order-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                border-bottom: 1px solid rgba(71, 71, 64, 0.2);
+                transition: background-color 0.3s ease;
+            }
 
+            .order-item:hover {
+                background-color: rgba(71, 71, 64, 0.03);
+            }
+
+            .order-info h3 {
+                margin: 0;
+                color: #474740;
+                font-size: 1.1rem;
+            }
+
+            .order-info p {
+                margin: 5px 0;
+                opacity: 0.8;
+                font-size: 0.85rem;
+            }
+
+            /* Miqdor boshqaruvi va tugmalar */
+            .miqdor-blok {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 8px;
+            }
+
+            .count-btn {
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                background-color: #474740 !important;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-weight: bold;
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: opacity 0.2s;
+            }
+
+            .count-btn:hover {
+                opacity: 0.9;
+            }
+
+            .count-btn:active {
+                transform: scale(0.95);
+            }
+
+            .mahsulot-soni {
+                font-weight: bold;
+                font-size: 1.1rem;
+                min-width: 25px;
+                text-align: center;
+                color: #474740;
+            }
+
+            /* O'chirish (Trash bin) tugmasi */
+            .delete-btn {
+                background-color: #474740;
+                border: none;
+                cursor: pointer;
+                margin-left: 10px;
+                font-size: 1.3rem;
+                filter: grayscale(1);
+                transition: transform 0.2s, filter 0.2s;
+            }
+
+            .delete-btn:hover {
+                transform: scale(1.2);
+                filter: grayscale(0);
+            }
+
+            /* Narx va Umumiy summa */
+            .price {
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: #474740;
+            }
+
+            .total-section {
+                text-align: right;
+                margin-top: 20px;
+                font-weight: bold;
+                font-size: 1.3rem;
+                border-top: 2px solid #474740;
+                padding-top: 15px;
+                color: #474740;
+            }
+
+        }
     </style>
+
+
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Buyurtmalarim</h1>
+    <div class="container">
+        <h1>Buyurtmalarim</h1>
 
-    <div id="buyurtma-ruyxati-ichki"></div>
+        <div id="buyurtma-ruyxati-ichki"></div>
 
-    <div class="btn-group">
-        <a href="../index.html" class="back-btn">Asosiy sahifaga qaytish</a>
-        <button onclick="savatniTozalash()" class="clear-btn">Savatni tozalash</button>
+        <div class="btn-group">
+            <a href="../index.html" class="back-btn">Asosiy sahifaga qaytish</a>
+            <button onclick="savatniTozalash()" class="clear-btn">Savatni tozalash</button>
+            <button type="button" id="send-btn" class="back-btn send">Yuborish</button>
+        </div>
     </div>
-</div>
-    </div>
-</div>
 
-  <script src="../js/coat.js"></script>
+
+    <div class="modal small" id="successModal">
+
+        <button class="close" onclick="closeAll()">×</button>
+
+
+
+        <h3>Tabriklaymiz 🎉</h3>
+
+        <p>Buyurtmangiz qabul qilindi!</p>
+
+    </div>
+
+    <script src="../js/coat.js"></script>
 </body>
 
 </html>
